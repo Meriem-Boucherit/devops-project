@@ -21,7 +21,7 @@
 #   decay_solves  optional, default 10 -- solves over which the value falls
 #   flag          plaintext; hashed at load time
 #   flag_sha256   already hashed; use this one in version control
-
+# a comment for small change testing pull request
 challenges:
   - slug: warmup-banner
     title: Read the banner
