@@ -1,9 +1,7 @@
 name: ci
-
 on:
-  push: { branches: [main] }
+  push:         { branches: [main] }
   pull_request: { branches: [main] }
-
 jobs:
   verify:
     runs-on: ubuntu-latest
