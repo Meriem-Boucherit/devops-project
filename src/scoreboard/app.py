@@ -347,17 +347,20 @@ def _register_routes(app: FastAPI, settings: Settings) -> None:
             team = s.scalar(select(Team).where(Team.name == name))
             if team is None:
                 raise HTTPException(status_code=404, detail="no such team")
+
             rows = s.execute(
                 select(Challenge.slug, Submission.points, Submission.submitted_at)
                 .join(Submission, Submission.challenge_id == Challenge.id)
                 .where(Submission.team_id == team.id, Submission.correct.is_(True))
                 .order_by(Submission.submitted_at)
             ).all()
+
             attempts = s.scalar(
                 select(func.count())
                 .select_from(Submission)
                 .where(Submission.team_id == team.id)
             )
+
             return {
                 "team": team.name,
                 "country": team.country,
@@ -379,6 +382,8 @@ def _register_routes(app: FastAPI, settings: Settings) -> None:
         submitted = normalise_flag(payload.flag)
         with db.session_scope() as s:
             team = s.scalar(select(Team).where(Team.name == payload.team.strip()))
+            if team is None:
+                raise HTTPException(status_code=404, detail="no such team")
             chal = s.scalar(
                 select(Challenge).where(Challenge.slug == payload.challenge.strip())
             )
