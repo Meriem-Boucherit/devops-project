@@ -33,7 +33,7 @@
 
 
 
-- **(b)**  A contributor who has permission to push changes could **still attempt** to introduce a **secret** by **bypassing the local pre-commit hook**. However, the CI pipeline **scans** the changes, and branch protection **prevents** the pull request from being merged when the required check **fails**. Therefore, a secret detected by the pipeline should **not reach main** through the normal **protected workflow**.
+- **(b)**  **A contributor who has permission** to push changes could **still attempt** to introduce a **secret** by **bypassing the local pre-commit hook**. However, the CI pipeline **scans** the changes, and branch protection **prevents** the pull request from being merged when the required check **fails**. Therefore, a secret detected by the pipeline should **not reach main** through the normal **protected workflow**.
 
 
 ----------
@@ -49,7 +49,6 @@
 
 - **(c)**  The command that ran the installation for me was: `pip install -e .`
 
-  (It was executed by the install step in the GitHub Actions workflow and the `-e` option installs the project in editable mode.)
 
 
 ----------
@@ -87,43 +86,43 @@ How each test failed:
 #### Part A:
 We didn't take proper screenshots of the steps since everything was already given in the labsheet and the pipline is working fine (shown in the repo)
 
-![Run test after part A](/screenshots/PartA.png)
+![Run test after part A](screenshots/PartA.png)
 
 #### Part B:
-![Part B setting](/screenshots/PartB.png)
+![Part B setting](screenshots/PartB.png)
 
 
 #### Part C:
-![Part C results](/screenshots/PartC_ErrorMsg.png)
+![Part C results](screenshots/PartC_ErrorMsg.png)
 
-![Part C results](/screenshots/PartC_mergingFailed.png)
+![Part C results](screenshots/PartC_mergingFailed.png)
 
 #### Part D:
-![PartD Commands](/screenshots/PartD_Branch.jpg)
+![PartD Commands](screenshots/PartD_Branch.jpg)
 
-![PartD Commands](/screenshots/PartD_defects.jpg)
+![PartD Commands](screenshots/PartD_defects.jpg)
 
-![PartD Commands](/screenshots/PartD_diagnosis.jpg)
+![PartD Commands](screenshots/PartD_diagnosis.jpg)
 
-![PartD Results](/screenshots/PartD_testsLogs.jpg)
+![PartD Results](screenshots/PartD_testsLogs.jpg)
 
-![PartD Results](/screenshots/PartD_logs.jpg)
+![PartD Results](screenshots/PartD_logs.jpg)
 
 
 #### Repairing Defects Part: 
-![Finding the defects](/screenshots/FidingDefects.jpg)
+![Finding the defects](screenshots/FidingDefects.jpg)
 
-![Start the fixing](/screenshots/RepairingStart.jpg)
+![Start the fixing](screenshots/RepairingStart.jpg)
 
-![Fixed codes](/screenshots/FixedCode01.jpg)
+![Fixed codes](screenshots/FixedCode01.jpg)
 
-![Fixed codes](/screenshots/FixedCode02.jpg)
+![Fixed codes](screenshots/FixedCode02.jpg)
 
-![More repairing](/screenshots/RepairingDefects.jpg)
+![More repairing](screenshots/RepairingDefects.jpg)
 
-![More repairing](/screenshots/RepairingDefects02.jpg)
+![More repairing](screenshots/RepairingDefects02.jpg)
 
-![Idna checking](/screenshots/CheckingIdna.jpg)
+![Idna checking](screenshots/CheckingIdna.jpg)
 
 
 
